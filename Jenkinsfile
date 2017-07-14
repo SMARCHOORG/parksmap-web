@@ -64,7 +64,8 @@ try { // Use a try block to perform cleanup in a finally block when the build fa
       //checkout scm
       //repoUrl = getRepoURL()
       
-      git url:'https://github.com/openshift-roadshow/parksmap-web.git'
+      //git url:'https://github.com/openshift-roadshow/parksmap-web.git'
+      git url:'https://github.com/SMARCHOORG/parksmap-web.git'
       stash includes: "ose3/pipeline-*.json", name: "artifact-template"
     }
 
