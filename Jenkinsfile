@@ -60,9 +60,9 @@ try { // Use a try block to perform cleanup in a finally block when the build fa
   node ("maven") {
 
     stage ('Checkout') {
-      //checkout scm
-      //repoUrl = getRepoURL()
-      git url:'https://github.com/SMARCHOORG/parksmap-web.git'
+      checkout scm
+      repoUrl = getRepoURL()
+      //git url:'https://github.com/SMARCHOORG/parksmap-web.git'
       stash includes: "ose3/pipeline-*.json", name: "artifact-template"
     }
 
