@@ -50,10 +50,9 @@ def getRouteHostname = { String routeName, String projectName ->
 
 // Initialize variables in default node context
 node {
-  //isPR        = env.BRANCH_NAME ? env.BRANCH_NAME.startsWith("PR") : false
-  //baseProject = env.PROJECT_NAME
-  //project     = env.PROJECT_NAME
-  project = "webhook1"
+  isPR        = env.BRANCH_NAME ? env.BRANCH_NAME.startsWith("PR") : false
+  baseProject = env.PROJECT_NAME
+  project     = env.PROJECT_NAME
 }
 
 try { // Use a try block to perform cleanup in a finally block when the build fails
@@ -63,8 +62,6 @@ try { // Use a try block to perform cleanup in a finally block when the build fa
     stage ('Checkout') {
       //checkout scm
       //repoUrl = getRepoURL()
-      
-      //git url:'https://github.com/openshift-roadshow/parksmap-web.git'
       git url:'https://github.com/SMARCHOORG/parksmap-web.git'
       stash includes: "ose3/pipeline-*.json", name: "artifact-template"
     }
