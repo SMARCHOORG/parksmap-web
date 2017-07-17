@@ -81,6 +81,7 @@ try { // Use a try block to perform cleanup in a finally block when the build fa
     }
 
     stage ('Build') {
+      sh "mvn clean"
       sh "mvn clean compile ${mavenArgs}"
     }
     
